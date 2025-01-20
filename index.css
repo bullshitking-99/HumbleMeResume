@@ -348,22 +348,33 @@ h2 {
 
 #main .outter > li {
   font-weight: 500;
+  font-size: 10pt;
+}
+
+#main .inner ul {
+  margin: 0;
+  padding: 0;
 }
 
 #main .inner li::before {
-  position: relative;
-  margin-left: 0;
-  color: grey;
-  font-size: 14px;
-  content: "• ";
+  content: "";
 }
 
 #main .inner li {
   font-weight: 300;
+  display: flex;
+  gap: 8px;
 }
 
 #main .inner li b {
-  font-weight: 400;
+  font-weight: 350;
+  flex-shrink: 0;
+}
+
+#main .inner-2 li {
+  margin-left: 4px;
+  display: flex;
+  gap: 4px;
 }
 
 /* sidebar */
@@ -391,6 +402,11 @@ h2 {
   width: 11pt; /* for text alignment */
   margin-right: 2pt;
   text-align: center;
+}
+
+#education ul li {
+  display: flex;
+  gap: 6px;
 }
 
 #skills {
