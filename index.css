@@ -369,6 +369,8 @@ h2 {
 #main .inner li b {
   font-weight: 350;
   flex-shrink: 0;
+  color: grey;
+  font-size: 10pt;
 }
 
 #main .inner-2 li {
@@ -407,6 +409,11 @@ h2 {
 #education ul li {
   display: flex;
   gap: 6px;
+}
+
+#education b {
+  font-weight: 350;
+  color: #000;
 }
 
 #skills {
