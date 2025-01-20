@@ -1,0 +1,430 @@
+@page {
+  margin: 0;
+  size: letter portrait;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  display: flex;
+  justify-content: center;
+  background-color: gray;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+:root {
+  --page-width: 8.5in;
+  /* --page-height: 11in; */
+  --main-width: 6.4in;
+  --sidebar-width: calc(var(--page-width) - var(--main-width));
+  --decorator-horizontal-margin: 0.2in;
+
+  --sidebar-horizontal-padding: 0.2in;
+
+  /* XXX: using px for very good precision control */
+  --decorator-outer-offset-top: 10px;
+  --decorator-outer-offset-left: -5.5px;
+  --decorator-border-width: 1px;
+  --decorator-outer-dim: 9px;
+  --decorator-border: 1px solid #ccc;
+
+  --row-blocks-padding-top: 5pt;
+  --date-block-width: 0.6in;
+
+  --main-blocks-title-icon-offset-left: -19pt;
+}
+
+body {
+  width: var(--page-width);
+  height: var(--page-height);
+  margin: 0;
+  color: #444;
+  font-weight: 300;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  line-height: 1.3;
+  hyphens: auto;
+  background-color: white;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  color: #000;
+}
+
+li {
+  list-style-type: none;
+}
+
+#main {
+  float: left;
+  width: var(--main-width);
+  padding: 0.25in 0.25in 0 0.25in;
+  font-size: 11pt;
+}
+
+#sidebar {
+  position: relative; /* for disclaimer */
+  float: right;
+  width: var(--sidebar-width);
+  height: 100%;
+  padding: 0.6in 0 0.6in 0.2in;
+  font-size: 10pt;
+  background-color: #f2f2f2;
+}
+
+/* main */
+
+/** big title **/
+#title,
+h1,
+h2 {
+  text-transform: uppercase;
+}
+
+#title {
+  position: relative;
+  left: 0.55in;
+  margin-bottom: 0.15in;
+  line-height: 1.2;
+}
+
+#title h1 {
+  font-weight: 300;
+  font-size: 22pt;
+  line-height: 1.5;
+}
+
+#title h1 strong {
+  margin: auto 2pt auto 4pt;
+  font-weight: 600;
+}
+
+.subtitle {
+  font-size: 11pt;
+}
+
+/*** categorial blocks ***/
+
+.main-block {
+  margin-top: 0.1in;
+}
+
+#main h2 {
+  position: relative;
+  top: var(--row-blocks-padding-top);
+  /* XXX: 0.5px for aligning fx printing */
+  left: calc((var(--date-block-width) + var(--decorator-horizontal-margin)));
+  color: #555;
+  font-weight: 400;
+  font-size: 13pt;
+}
+
+#main h2 > i {
+  /* use absolute position to prevent icon's width from misaligning title */
+  /* assigning a fixed width here is no better due to needing to align decorator
+       line too */
+  position: absolute;
+  top: 3pt;
+  left: calc(var(--main-blocks-title-icon-offset-left) - 1pt);
+  z-index: 1; /* over decorator line */
+  color: #444;
+}
+
+#main h2::after {
+  position: relative;
+  top: calc(-1 * var(--row-blocks-padding-top));
+  /* XXX: 0.5px for aligning fx printing */
+  left: calc(-1 * var(--decorator-horizontal-margin));
+  z-index: 0;
+  display: block;
+  /* extends the decorator line */
+  height: calc(var(--row-blocks-padding-top) * 2);
+  font-size: 0;
+  line-height: 0;
+  border-left: var(--decorator-border);
+  content: " ";
+}
+
+/**** minor tweaks on the icon fonts ****/
+/* #main h2 > .fa-graduation-cap {
+    left: calc(var(--main-blocks-title-icon-offset-left) - 2pt);
+    top: 2pt;
+  }
+  
+  #main h2 > .fa-suitcase {
+    top: 1pt;
+  }
+  
+  #main h2 > .fa-folder-open {
+    top: 3pt;
+  } */
+
+/**** individual row blocks (date - decorator - details) ****/
+
+.blocks {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+/* .blocks > div {
+    padding-top: var(--row-blocks-padding-top);
+  } */
+
+.date {
+  flex: 0 0 var(--date-block-width);
+  padding-top: calc(var(--row-blocks-padding-top) + 2.5pt);
+  padding-right: var(--decorator-horizontal-margin);
+  font-size: 9pt;
+  line-height: 1;
+  text-align: right;
+}
+
+.date span {
+  display: block;
+}
+
+.date span:nth-child(2)::before {
+  position: relative;
+  top: 1pt;
+  right: 10pt;
+  display: block;
+  height: 10pt;
+  padding-bottom: 2pt;
+  content: "|";
+}
+
+.decorator {
+  position: relative;
+  flex: 0 0 0;
+  width: 2pt;
+  min-height: 100%;
+  border-left: var(--decorator-border);
+}
+
+/*
+   * XXX: Use two filled circles to achieve the circle-with-white-border effect.
+   * The normal technique of only using one pseudo element and
+   * border: 1px solid white; style makes firefox erroneously either:
+   * 1) overflows the grayshade background (if no background-clip is set), or
+   * 2) shows decorator line which should've been masked by the white border
+   *
+   */
+
+.decorator::before {
+  position: absolute;
+  top: var(--decorator-outer-offset-top);
+  left: -3pt;
+  display: block;
+  width: var(--decorator-outer-dim);
+  height: var(--decorator-outer-dim);
+  background-color: #fff;
+  border-radius: calc(var(--decorator-outer-dim) / 2);
+  content: " ";
+}
+
+.decorator::after {
+  position: absolute;
+  top: calc(var(--decorator-outer-offset-top) + var(--decorator-border-width));
+  left: -3pt;
+  display: block;
+  width: calc(var(--decorator-outer-dim) - (var(--decorator-border-width) * 2));
+  height: calc(
+    var(--decorator-outer-dim) - (var(--decorator-border-width) * 2)
+  );
+  background-color: #555;
+  border-radius: calc(
+    (var(--decorator-outer-dim) - (var(--decorator-border-width) * 2)) / 2
+  );
+  content: " ";
+}
+
+.blocks:last-child .decorator {
+  /* slightly shortens it */
+  margin-bottom: 0.15in;
+}
+
+/***** fine-tunes on the details block where the real juice is *****/
+
+.details {
+  flex: 1 0 0;
+  padding-top: calc(
+    var(--row-blocks-padding-top) - 0.5pt
+  ) !important; /* not sure why but this is needed for better alignment */
+  padding-left: var(--decorator-horizontal-margin);
+}
+
+.details header {
+  color: #000;
+}
+
+.details h3 {
+  font-size: 11pt;
+  opacity: 0.8;
+}
+
+.main-block:not(.concise) .details div {
+  margin: 0.18in 0 0.1in 0;
+}
+
+.main-block:not(.concise) .blocks:last-child .details div {
+  margin-bottom: 0;
+}
+
+.details .place {
+  float: left;
+  margin: 5px 0;
+  font-size: 7.5pt;
+}
+
+.details .place code {
+  padding: 2px 4px;
+  font-family: inherit;
+  background-color: #f2f2f2;
+  border-radius: 5px;
+}
+
+.details .location {
+  float: right;
+}
+
+.details div {
+  clear: both;
+}
+
+.details .location::before {
+  position: relative;
+  top: 0.25pt;
+  right: 3pt;
+  display: inline-block;
+  font-weight: normal;
+  font-family: FontAwesome;
+  font-style: normal;
+  text-decoration: inherit;
+  content: "\f041";
+}
+
+/***** fine-tunes on the lists... *****/
+
+#main ul {
+  margin: 0.08in 0;
+  padding-left: 0.07in;
+}
+
+#main li {
+  margin: 0 0 0.025in 0;
+}
+
+/****** customize list symbol style ******/
+#main li::before {
+  position: relative;
+  margin-left: -4.25pt;
+  font-size: 16px;
+  content: "• ";
+}
+
+.details .concise ul {
+  margin: 0 !important;
+  -webkit-columns: 2;
+  -moz-columns: 2;
+  columns: 2;
+}
+
+.details .concise li {
+  margin: 0 !important;
+}
+
+.details .concise li {
+  margin-left: 0 !important;
+}
+
+#main .outter > li {
+  font-weight: 500;
+}
+
+#main .inner li::before {
+  position: relative;
+  margin-left: 0;
+  color: grey;
+  font-size: 14px;
+  content: "• ";
+}
+
+#main .inner li {
+  font-weight: 300;
+}
+
+#main .inner li b {
+  font-weight: 400;
+}
+
+/* sidebar */
+
+#sidebar h1 {
+  font-weight: 500;
+  font-size: 12pt;
+}
+
+.side-block {
+  margin-top: 0.4in;
+}
+
+.side-block ul {
+  margin-top: 0.05in;
+  padding-left: 0;
+  font-weight: 400;
+  font-size: 9pt;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  line-height: 1.75;
+}
+
+.side-block li > i {
+  width: 11pt; /* for text alignment */
+  margin-right: 2pt;
+  text-align: center;
+}
+
+#skills {
+  line-height: 1.5;
+}
+
+#skills ul {
+  margin: 0.05in 0 0.15in;
+  padding: 0;
+}
+
+#skills ul b {
+  font-size: 9pt;
+}
+
+#skills ul li {
+  margin-left: 0.1in;
+  opacity: 0.9;
+}
+
+#disclaimer {
+  position: absolute;
+  right: var(--sidebar-horizontal-padding);
+  bottom: var(--sidebar-horizontal-padding);
+  color: #777;
+  font-size: 7.5pt;
+  font-style: italic;
+  line-height: 1.1;
+  text-align: right;
+}
+
+#disclaimer code {
+  color: #666;
+  font-weight: 400;
+  font-family: "Source Code Pro";
+  font-style: normal;
+}
