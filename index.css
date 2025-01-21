@@ -21,7 +21,7 @@ a {
 :root {
   --page-width: 8.5in;
   /* --page-height: 11in; */
-  --main-width: 6.4in;
+  /* --main-width: 6.4in; */
   --sidebar-width: calc(var(--page-width) - var(--main-width));
   --decorator-horizontal-margin: 0.2in;
 
@@ -84,15 +84,15 @@ li {
 /* main */
 
 /** big title **/
-#title,
-h1,
-h2 {
-  text-transform: uppercase;
-}
 
 #title {
   position: relative;
   left: 0.55in;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  width: calc(100% - 0.55in);
   margin-bottom: 0.15in;
   line-height: 1.2;
 }
@@ -109,7 +109,9 @@ h2 {
 }
 
 .subtitle {
-  font-size: 11pt;
+  margin-bottom: 2px;
+  font-weight: 400;
+  font-size: 12px;
 }
 
 /*** categorial blocks ***/
@@ -286,7 +288,7 @@ h2 {
 }
 
 .details .place code {
-  padding: 2px 4px;
+  padding: 2px 6px;
   font-family: inherit;
   background-color: #f2f2f2;
   border-radius: 5px;
@@ -346,9 +348,12 @@ h2 {
   margin-left: 0 !important;
 }
 
-#main .outter > li {
+#main .outter {
+  width: 90%;
+}
+
+#main .outter b {
   font-weight: 500;
-  font-size: 10pt;
 }
 
 #main .inner ul {
@@ -361,22 +366,21 @@ h2 {
 }
 
 #main .inner li {
-  font-weight: 300;
   display: flex;
   gap: 8px;
+  font-weight: 300;
 }
 
 #main .inner li b {
-  font-weight: 350;
   flex-shrink: 0;
   color: grey;
-  font-size: 10pt;
+  font-weight: 350;
 }
 
 #main .inner-2 li {
-  margin-left: 4px;
   display: flex;
   gap: 4px;
+  margin-left: 4px;
 }
 
 /* sidebar */
@@ -386,10 +390,6 @@ h2 {
   font-size: 12pt;
 }
 
-.side-block {
-  margin-top: 0.4in;
-}
-
 .side-block ul {
   margin-top: 0.05in;
   padding-left: 0;
@@ -397,7 +397,7 @@ h2 {
   font-size: 9pt;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  line-height: 1.75;
+  line-height: 1;
 }
 
 .side-block li > i {
@@ -406,32 +406,8 @@ h2 {
   text-align: center;
 }
 
-#education ul li {
-  display: flex;
-  gap: 6px;
-}
-
-#education b {
-  font-weight: 350;
-  color: #000;
-}
-
-#skills {
-  line-height: 1.5;
-}
-
-#skills ul {
-  margin: 0.05in 0 0.15in;
-  padding: 0;
-}
-
-#skills ul b {
-  font-size: 9pt;
-}
-
-#skills ul li {
-  margin-left: 0.1in;
-  opacity: 0.9;
+.side-block ul li::before {
+  content: "" !important;
 }
 
 #disclaimer {
@@ -439,7 +415,7 @@ h2 {
   right: var(--sidebar-horizontal-padding);
   bottom: var(--sidebar-horizontal-padding);
   color: #777;
-  font-size: 7.5pt;
+  font-size: 8.5pt;
   font-style: italic;
   line-height: 1.1;
   text-align: right;

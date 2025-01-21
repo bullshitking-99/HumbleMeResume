@@ -11,13 +11,35 @@
   <body lang="zh" id="main-page">
     <section id="main">
       <header id="title">
-        <h1>李名河</h1>
-        <span class="subtitle">前端工程师 25岁 男</span>
+        <div>
+          <h1>李名河</h1>
+          <div class="subtitle">前端工程师 / 25岁 / 男</div>
+          <div class="subtitle">北京工业大学 / 软件工程硕士</div>
+          <div class="subtitle">湖北中医药大学 / 信息工程学士</div>
+        </div>
+        <div class="side-block">
+          <ul>
+            <li>
+              <i class="fa fa-book"></i>
+              <a href="https://juejin.cn/user/4402870941397416" target="_blank"
+                >掘金/迷途小前端_99</a
+              >
+            </li>
+            <li>
+              <i class="fa fa-github"></i>
+              <a href="https://github.com/bullshitking-99" target="_blank"
+                >github/bullshitking-99</a
+              >
+            </li>
+            <li><i class="fa fa-envelope"></i> liminghe_1999@163.com</li>
+            <li><i class="fa fa-phone"></i> 15549925550</li>
+          </ul>
+        </div>
       </header>
       <section name="工作经历" class="main-block concise">
         <h2><i class="fa fa-building"></i>工作经历</h2>
         <section name="字节跳动" class="blocks">
-          <div class="date"><span>2024</span></div>
+          <div class="date"><span>2024</span><span>2025</span></div>
           <div class="decorator"></div>
           <div class="details">
             <header>
@@ -25,14 +47,14 @@
               <span class="place">
                 <code>校招</code>
                 <code>客户数据平台</code>
-                <code>react</code>
+                <code>React</code>
               </span>
               <span class="location">北京</span>
             </header>
             <div>
               <ul class="outter">
                 <li>
-                  可编辑表格升级
+                  <b>可编辑表格升级</b>
                   <ul class="inner">
                     <li>
                       <b>任务</b>
@@ -41,12 +63,10 @@
                     <li>
                       <b>难点</b>
                       <ul class="inner-2">
-                        <li>1. 在提升性能的同时兼顾用户的习惯成本;</li>
+                        <li>· 在提升性能的同时兼顾用户的习惯成本;</li>
+                        <li>· 具备足够的通用性，使旧项目可以快速稳定地迁移;</li>
                         <li>
-                          2. 具备足够的通用性，使旧项目可以快速稳定地迁移;
-                        </li>
-                        <li>
-                          3.
+                          ·
                           解决传统方案中的一些开发痛点，如编辑器的异步配置获取;
                         </li>
                       </ul>
@@ -63,7 +83,7 @@
                         <li>
                           <div>2.</div>
                           <div>
-                            使用自定义的编辑器配置管理Hook实现业务场景所需的表单联动、校验、更新等功能，通过并行执行、依赖区分等实现减少js负担，提升编辑器INP性能；
+                            使用自定义的编辑器配置管理Hook实现业务场景所需的表单联动、校验、更新等功能，通过并行执行、依赖区分等功能减少js负担，提升编辑器INP性能；
                           </div>
                         </li>
                         <li>
@@ -78,21 +98,21 @@
                       <b>成果</b>
                       <ul class="inner-2">
                         <li>
-                          <div>1.</div>
+                          <div>·</div>
                           <div>
                             百条数据下（原方案极限），首屏渲染时间减少88%；
                           </div>
                         </li>
                         <li>
-                          <div>2.</div>
+                          <div>·</div>
                           <div>
                             初始化后，轻型编辑器INP指数相当，重型编辑器仅轻微增加，无卡顿；
                           </div>
                         </li>
                         <li>
-                          <div>3.</div>
+                          <div>·</div>
                           <div>
-                            虚拟滚动中，任意速度滚动维持稳定30帧，且无渲染白屏。
+                            虚拟滚动中，任意速度滚动维持稳定30帧，且无渲染白屏；
                           </div>
                         </li>
                       </ul>
@@ -100,7 +120,7 @@
                   </ul>
                 </li>
                 <li>
-                  指标管理模块重构
+                  <b>指标管理模块重构</b>
                   <ul class="inner">
                     <li>
                       <b>任务</b>
@@ -108,7 +128,7 @@
                     </li>
                     <li>
                       <b>难点</b>
-                      根据用户调研在前端侧给出体验优化方案，基于组件差异对原有组件进行重构
+                      根据用户调研在前端侧给出体验优化方案，基于组件库差异对原有组件进行重构
                     </li>
                     <li>
                       <b>执行</b>
@@ -149,13 +169,13 @@
                       <b>成果</b>
                       <ul class="inner-2">
                         <li>
-                          <div>1.</div>
+                          <div>·</div>
                           <div>
-                            重建页面共5+，沉淀改造后的通用组件5+，涉及列表、创建、详情等常用业务场景的全流程；
+                            重建页面共5+，沉淀改造后的重型业务组件5+，涉及列表、创建、详情等常用业务场景的全流程；
                           </div>
                         </li>
                         <li>
-                          <div>2.</div>
+                          <div>·</div>
                           <div>
                             在年度反馈中，NPS提升25%+，指标创建时间缩短50%+，指标使用率提升30%+；
                           </div>
@@ -165,7 +185,7 @@
                   </ul>
                 </li>
                 <li>
-                  客户数据平台业务迭代
+                  <b>客户数据平台业务迭代</b>
                   <ul class="inner">
                     <li>
                       <b>任务</b>
@@ -174,16 +194,44 @@
                     <li><b>难点</b> 研发自测模式下保持高质量交付</li>
                     <li>
                       <b>执行</b>
-                      在泳道的敏捷开发流程之上，充分利用测试用例和增量代码覆盖率等工具，提高测试效率
+                      <ul class="inner-2">
+                        <li>
+                          <div>·</div>
+                          <div>
+                            开发前:
+                            梳理prd改动点，结合系统逻辑分支和交互联动等生成完整的设计文档和测试case，防止开发时的错漏；
+                          </div>
+                        </li>
+                        <li>
+                          <div>·</div>
+                          <div>
+                            开发后:
+                            根据测试case快速检验需求完成度，同时结合增量代码覆盖率检测工具进一步提高测试效率；
+                          </div>
+                        </li>
+                      </ul>
                     </li>
                     <li>
                       <b>成果</b>
-                      完成了数据条目的收藏、跳转、卡片等易用性建设，并新增了客群评估等依托平台数据的分析功能，期间零线上阻塞事故，保质保量地交付开发成果
+                      <ul class="inner-2">
+                        <li>
+                          <div>·</div>
+                          <div>
+                            完成了数据条目的收藏、跳转、卡片等易用性建设，并新增了客群评估等依托平台数据的分析功能；
+                          </div>
+                        </li>
+                        <li>
+                          <div>·</div>
+                          <div>
+                            期间零线上阻塞事故，保质保量地交付开发成果；
+                          </div>
+                        </li>
+                      </ul>
                     </li>
                   </ul>
                 </li>
                 <li>
-                  团队技术建设与分享
+                  <b>团队技术建设与分享</b>
                   <ul class="inner">
                     <li>
                       <b>通用组件</b>
@@ -207,20 +255,19 @@
               <h3>快手·本地生活</h3>
               <span class="place">
                 <code>实习</code>
-                <code>react</code>
-                <code>react native</code>
+                <code> React</code>
+                <code>React Native</code>
               </span>
               <span class="location">北京</span>
             </header>
             <div>
-              <ul>
+              <ul class="outter">
                 <li>
-                  参与结算业务重构，负责对账模块开发，NPS从7.13提升至8.0，账单反
-                  馈周均60+降至20-
+                  参与结算业务重构，负责对账模块开发，NPS从7.13提升至8.0，账单反馈周均60+降至20-；
                 </li>
-                <li>基于结算业务的需求开发，助力组内业务模版与组件沉淀</li>
+                <li>基于结算业务的需求开发，助力组内业务模版与组件沉淀；</li>
                 <li>
-                  参与营销活动低代码创建项目，调研运营工作，转化需求并开发，使运营自主创建活动页面且5pd+降为2pd-
+                  参与营销活动低代码创建项目，调研运营工作，转化需求并开发，使运营自主创建活动页面且5pd+降为2pd-；
                 </li>
               </ul>
             </div>
@@ -294,7 +341,8 @@
               </h3>
               <span class="place">
                 <code>JavaScript</code>
-                <code>vue</code>
+                <code>Vue</code>
+                <code>React</code>
                 <code>npm</code>
               </span>
               <span class="location">掘金</span>
@@ -343,63 +391,6 @@
         </section>
       </section>
     </section>
-    <aside id="sidebar">
-      <div class="side-block">
-        <h1>开源地址</h1>
-        <ul>
-          <li>
-            <i class="fa fa-book"></i>
-            <a href="https://juejin.cn/user/4402870941397416" target="_blank"
-              >掘金/迷途小前端_99</a
-            >
-          </li>
-          <li>
-            <i class="fa fa-github"></i>
-            <a href="https://github.com/bullshitking-99" target="_blank"
-              >github/bullshitking-99</a
-            >
-          </li>
-          <li>
-            <i class="fa-brands fa-npm"></i>
-            <a href="https://www.npmjs.com/~minghe-lee" target="_blank"
-              >npm/minghe-lee</a
-            >
-          </li>
-        </ul>
-      </div>
-      <div class="side-block" id="education">
-        <h1>教育背景</h1>
-        <ul>
-          <li>
-            <div>
-              <i class="fa-solid fa-graduation-cap"></i>
-            </div>
-            <div>
-              <b>硕士</b> <br />
-              北京工业大学/软件工程
-            </div>
-          </li>
-          <li>
-            <div>
-              <i class="fa-solid fa-graduation-cap" style="opacity: 0.8"></i>
-            </div>
-            <div>
-              <b>学士</b> <br />
-              湖北中医药大学/信息工程
-            </div>
-          </li>
-        </ul>
-      </div>
-      <div class="side-block" id="contact">
-        <h1>联络方式</h1>
-        <ul>
-          <li><i class="fa fa-envelope"></i> liminghe_1999@163.com</li>
-          <li><i class="fa fa-phone"></i> 15549925550</li>
-        </ul>
-      </div>
-
-      <!-- <div class="side-block" id="disclaimer">Build in Pure CSS</div> -->
-    </aside>
   </body>
   <script src="/jQuery.js"></script>
   <script>
