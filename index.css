@@ -101,6 +101,7 @@ li {
   font-weight: 300;
   font-size: 22pt;
   line-height: 1.5;
+  margin-bottom: 6px;
 }
 
 #title h1 strong {
@@ -322,7 +323,7 @@ li {
 }
 
 #main li {
-  margin: 0 0 0.025in 0;
+  margin: 0 0 0.03in 0;
 }
 
 /****** customize list symbol style ******/
@@ -391,7 +392,7 @@ li {
 }
 
 .side-block ul {
-  margin-top: 0.05in;
+  margin: 0 !important;
   padding-left: 0;
   font-weight: 400;
   font-size: 9pt;
