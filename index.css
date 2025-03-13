@@ -90,19 +90,19 @@ li {
   left: 0.55in;
 
   display: flex;
+  gap: 1in;
   align-items: flex-end;
   justify-content: space-between;
   width: calc(100% - 0.55in);
   margin-bottom: 0.15in;
   line-height: 1.2;
-  gap: 1in;
 }
 
 #title h1 {
+  margin-bottom: 6px;
   font-weight: 300;
   font-size: 22pt;
   line-height: 1.5;
-  margin-bottom: 6px;
 }
 
 #title h1 strong {
@@ -267,8 +267,8 @@ li {
 }
 
 .details header {
-  color: #000;
   overflow: hidden;
+  color: #000;
 }
 
 .details h3 {
@@ -321,7 +321,7 @@ li {
 }
 
 #main li {
-  margin: 0 0 0.03in 0;
+  margin: 0 0 0.05in 0;
 }
 
 /****** customize list symbol style ******/
